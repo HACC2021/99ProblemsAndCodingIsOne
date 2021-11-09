@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chipnumber:</strong>
+  <%= @pet.chipNumber %>
+</p>
+
+<p>
+  <strong>Ownername:</strong>
+  <%= @pet.ownerName %>
+</p>
+
+<p>
+  <strong>Owneradress:</strong>
+  <%= @pet.ownerAdress %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @pet.payment %>
+</p>
+
+<p>
+  <strong>Dateofarrival:</strong>
+  <%= @pet.dateOfArrival %>
+</p>
+
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<%= link_to 'Back', pets_path %>
