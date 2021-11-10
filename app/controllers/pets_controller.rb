@@ -1,6 +1,8 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
+  STATUS =['Ready for pickup','Under investigation','Documents needed','Animal is sick','Registered but not submitted']
+  
   # GET /pets
   # GET /pets.json
   def index
@@ -69,6 +71,6 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:chipNumber, :ownerName, :ownerAdress, :payment, :dateOfArrival)
+      params.require(:pet).permit(:chipNumber, :status, :ownerName, :ownerAdress, :payment, :dateOfArrival, :email, :dogname)
     end
 end

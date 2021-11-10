@@ -15,6 +15,11 @@
     <%= form.label :chipNumber %>
     <%= form.number_field :chipNumber %>
   </div>
+  
+ <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, PetsController::STATUS, class: "form-control",placeholder:"status" %>
+  </div>
 
   <div class="field">
     <%= form.label :ownerName %>
@@ -26,6 +31,16 @@
     <%= form.text_field :ownerAdress %>
   </div>
 
+    <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  
+    <div class="field">
+    <%= form.label :petName %>
+    <%= form.text_field :petName %>
+  </div>
+
   <div class="field">
     <%= form.label :payment %>
     <%= form.check_box :payment %>
@@ -35,6 +50,7 @@
     <%= form.label :dateOfArrival %>
     <%= form.date_select :dateOfArrival %>
   </div>
+  
 
   <div class="actions">
     <%= form.submit %>

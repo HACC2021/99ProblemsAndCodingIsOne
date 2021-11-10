@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+
+<h1>Details of pet</h1>
+</br>
 <p>
   <strong>Chipnumber:</strong>
   <%= @pet.chipNumber %>
 </p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pet.status %>
+</p
+
 
 <p>
   <strong>Ownername:</strong>
@@ -16,6 +25,16 @@
 </p>
 
 <p>
+  <strong>Email:</strong>
+  <%= @pet.email %>
+</p
+
+<p>
+  <strong>pet name:</strong>
+  <%= @pet.petName %>
+</p
+
+<p>
   <strong>Payment:</strong>
   <%= @pet.payment %>
 </p>
@@ -24,6 +43,6 @@
   <strong>Dateofarrival:</strong>
   <%= @pet.dateOfArrival %>
 </p>
-
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
-<%= link_to 'Back', pets_path %>
+</br>
+<%= link_to 'Edit', edit_pet_path(@pet), class:"btn btn-secondary btn-sm" %> |
+<%= link_to 'Back', pets_path, class:"btn btn-secondary btn-sm" %>

@@ -1,15 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pets</h1>
 
-<table class = "table">
-  <thead>
+
+<h1 style ="color=blue"> Department of Agriculture</h1>
+<p></p>
+</br>
+<h3> Overview of registered pets</h2>
+</br>
+<table class="table table-sm table-striped ml-4">
+  <thead class="thead-dark">
     <tr>
       <th>Chip number</th>
+      <th>Status</th>
       <th>Owner name</th>
       <th>Owner adress</th>
       <th>Payment</th>
       <th>Date of arrival</th>
+      <th>Email</th>
+      <th>Pet name</th>
       <th colspan="20"></th>
     </tr>
   </thead>
@@ -18,13 +26,17 @@
     <% @pets.each do |pet| %>
       <tr>
         <td><%= pet.chipNumber %></td>
+        <td><%= pet.status %></td>
         <td><%= pet.ownerName %></td>
         <td><%= pet.ownerAdress %></td>
         <td><%= pet.payment %></td>
         <td><%= pet.dateOfArrival %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= pet.email %></td>
+        <td><%= pet.petName %></td>
+        <td><%= link_to 'Show', pet,class:"btn btn-secondary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_pet_path(pet), class:"btn btn-secondary btn-sm"%></td>
+        <td><%= link_to 'Destroy', pet, class:"btn btn-secondary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>
