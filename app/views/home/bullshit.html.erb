@@ -1,0 +1,8 @@
+    <input type="number" name="chipNumber"/>
+     
+    <% @pets.each do |pet| %>
+    <% if pet.chipNumber == chipNumber %>
+          <div><%= link_to 'Show', pet,class:"btn btn-secondary btn-sm" %></div>
+    <% else %>
+    <% end %>
+    <% end %>

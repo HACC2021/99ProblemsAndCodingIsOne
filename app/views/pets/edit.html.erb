@@ -1,6 +1,11 @@
-<h1>Editing Pet</h1>
+<% if user_signed_in? %>
+    <h1>Editing Pet</h1>
 
-<%= render 'form', pet: @pet %>
-</br>
-<%= link_to 'Show', @pet, class:"btn btn-secondary btn-sm" %> |
-<%= link_to 'Back', pets_path, class:"btn btn-secondary btn-sm"%>
+    <%= render 'form', pet: @pet %>
+    </br>
+    <%= link_to 'Show', @pet, class:"btn btn-secondary btn-sm" %> |
+    <%= link_to 'Back', pets_path, class:"btn btn-secondary btn-sm"%>
+<% else %> 
+    <br/>
+    <h3>You don't have access to this page. Please login.</h3>
+<% end %>

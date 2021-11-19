@@ -13,6 +13,13 @@ class PetsController < ApplicationController
   # GET /pets/1.json
   def show
   end
+  
+  def petsindex
+    if params[:chipNumber].present?
+      @input = "hello #{params[:chipNumber]}!" 
+      #@input = "hello!" 
+    end
+  end
 
   # GET /pets/new
   def new
