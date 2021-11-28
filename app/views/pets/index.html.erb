@@ -1,7 +1,7 @@
 </br>
 <h3> Overview of registered pets</h2>
 </br>
-<table class="table table-sm table-striped ml-4">
+<table class="table table-sm table-striped">
   <thead class="thead-dark">
     <tr>
       <th>Chip number</th>
@@ -23,7 +23,7 @@
         <td><%= pet.status %></td>
         <td><%= pet.ownerName %></td>
         <td><%= pet.ownerAdress %></td>
-        <td><%= pet.payment %></td>
+        <td><%= human_boolean(pet.payment) %></td>
         <td><%= pet.dateOfArrival %></td>
         <td><%= pet.email %></td>
         <td><%= pet.petName %></td>
@@ -41,6 +41,11 @@
 
 <% if user_signed_in? %>
   <div>
-    <%= link_to 'New Pet', new_pet_path, class:"btn btn-secondary btn-sm" %>
+    <%= link_to 'New Pet', new_pet_path, class:"btn btn-primary btn-sm" %>
   </div>
+<% else %>
+  <%= form_tag("pets", method: "get") do %>
+  <%= number_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Check Status", class:"btn btn-sm btn-outline-primary") %>
+  <% end %>
 <% end %>

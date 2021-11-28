@@ -6,5 +6,5 @@
   
   <%= form_tag("pets", method: "get") do %>
   <%= number_field_tag(:search, params[:search]) %>
-  <%= submit_tag("Check Status") %>
+  <%= submit_tag("Check Status", class:"btn btn-sm btn-outline-primary") %>
   <% end %>
