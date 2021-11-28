@@ -5,6 +5,6 @@
 <br/>
   
   <%= form_tag("pets", method: "get") do %>
-  <%= number_field_tag(:chipNumber, params[:chipNumber]) %>
+  <%= number_field_tag(:search, params[:search]) %>
   <%= submit_tag("Check Status") %>
   <% end %>
