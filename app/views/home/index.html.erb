@@ -3,16 +3,8 @@
 <br/>
 <h3><u>Check Pet Status</u></h3>
 <br/>
-<%= form_with model: @pets do |form| %>
-  <%= form.label :chipNumber %>
-  <%= form.number_field :chipNumber %>
-  <%= form.submit :value %>
-<% end %>
-
-<br/>
   
-  <%= form_tag("/petsindex", method: "get") do %>
-  <%= number_field_tag(:chipNumber, @input) %>
-  <%= submit_tag("Submit") %>
-  
-<% end %>
+  <%= form_tag("pets", method: "get") do %>
+  <%= number_field_tag(:chipNumber, params[:chipNumber]) %>
+  <%= submit_tag("Check Status") %>
+  <% end %>

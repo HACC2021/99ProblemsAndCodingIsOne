@@ -3,8 +3,15 @@ Rails.application.routes.draw do
   get 'home/bullshit'
   get 'petsindex' => 'pets#show'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'home#index'
+  
+  unauthenticated :user do
+  root :to => 'home#index', :as => "unauthenticated_root"
+  end
+  
+  authenticated :user do
+    root :to => "pets#index"
+    # Rails 4 requires the 'as' option to give it a unique name
+    root :to => "pets#index", :as => "authenticated_root"
+  end
 
-  #get 'home/petStatusCheck', to: 'petStatusCheck_Controller#show'
 end

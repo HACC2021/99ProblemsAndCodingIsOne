@@ -6,19 +6,12 @@ class PetsController < ApplicationController
   # GET /pets
   # GET /pets.json
   def index
-    @pets = Pet.all
+    @pets = Pet.where(["chipNumber LIKE ?","%#{params[:chipNumber]}%"])
   end
 
   # GET /pets/1
   # GET /pets/1.json
   def show
-  end
-  
-  def petsindex
-    if params[:chipNumber].present?
-      @input = "hello #{params[:chipNumber]}!" 
-      #@input = "hello!" 
-    end
   end
 
   # GET /pets/new
