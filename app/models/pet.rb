@@ -4,7 +4,7 @@ class Pet < ApplicationRecord
     
     def self.search(search)
       if search
-        where(["chipNumber LIKE ?","#{search}"])
+        where(["pets.chipNumber LIKE ?","#{search}"])
       else
         all
       end
