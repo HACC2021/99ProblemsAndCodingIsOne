@@ -45,4 +45,8 @@
 </p>
 </br>
 <%= link_to 'Edit', edit_pet_path(@pet), class:"btn btn-secondary btn-sm" %> |
-<%= link_to 'Back', pets_path, class:"btn btn-secondary btn-sm" %>
+<% if user_signed_in? %>
+    <%= link_to 'Back', pets_path, class:"btn btn-secondary btn-sm"%>
+<% else %>
+    <%= link_to 'Back', home_index_path, class:"btn btn-secondary btn-sm"%>
+<% end %>

@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <% if user_signed_in? %>
   <div class="field">
     <%= form.label :chipNumber %>
     <%= form.number_field :chipNumber %>
@@ -26,16 +27,7 @@
     <%= form.text_field :ownerName %>
   </div>
 
-  <div class="field">
-    <%= form.label :ownerAdress %>
-    <%= form.text_field :ownerAdress %>
-  </div>
 
-    <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  
     <div class="field">
     <%= form.label :petName %>
     <%= form.text_field :petName %>
@@ -51,8 +43,21 @@
     <%= form.date_select :dateOfArrival %>
   </div>
   
+  <div class="field">
+    <%= form.label :ownerAdress %>
+    <%= form.text_field :ownerAdress %>
+  </div>
+  
+  
+  <% end %>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  
 
   <div class="actions">
-    <%= form.submit "Add new pet", class:"btn btn-primary btn-sm"%>
+    <%= form.submit "Safe", class:"btn btn-primary btn-sm"%>
   </div>
 <% end %>

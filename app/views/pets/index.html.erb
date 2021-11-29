@@ -28,9 +28,12 @@
         <td><%= pet.email %></td>
         <td><%= pet.petName %></td>
         <td><%= link_to 'Show', pet,class:"btn btn-secondary btn-sm" %></td>
+        
         <% if user_signed_in? %>
           <td><%= link_to 'Edit', edit_pet_path(pet), class:"btn btn-secondary btn-sm"%></td>
           <td><%= link_to 'Destroy', pet, class:"btn btn-secondary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td><%= link_to 'Change notification Email', edit_pet_path(pet), class:"btn btn-secondary btn-sm"%></td>
         <% end %>
       </tr>
     <% end %>
