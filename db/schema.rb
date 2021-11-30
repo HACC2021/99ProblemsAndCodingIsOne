@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_004845) do
+ActiveRecord::Schema.define(version: 2021_11_29_234931) do
 
   create_table "pets", force: :cascade do |t|
-    t.integer "chipNumber"
+    t.integer "chip_number"
     t.string "ownerName"
     t.string "ownerAdress"
     t.boolean "payment"
