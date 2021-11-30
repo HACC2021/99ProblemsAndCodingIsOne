@@ -4,7 +4,7 @@ class Pet < ApplicationRecord
     
     def self.search(search)
       if search
-        where(["chip_number LIKE ?","#{search}"])
+        where(["cast(chip_number as text) LIKE ?","#{search}"])
       else
         all
       end
