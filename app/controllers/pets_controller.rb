@@ -47,7 +47,7 @@ class PetsController < ApplicationController
         format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
         format.json { render :show, status: :ok, location: @pet }
       else
-        format.html { render :edit }
+        format.html { render :edit ,  UserMailer.with.welcome_email.deliver_now}
         format.json { render json: @pet.errors, status: :unprocessable_entity }
       end
     end
