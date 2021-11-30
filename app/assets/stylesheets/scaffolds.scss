@@ -1,7 +1,16 @@
 body {
-  background-color: #73CC4F;
-  color: #333;
+  background-color: #174004;
+  color: #ffffff;
   margin: 33px; }
+  
+button, input, select {
+    overflow: visible;
+    background-color: #8bc38f;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
