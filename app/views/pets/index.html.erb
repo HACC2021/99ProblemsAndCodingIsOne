@@ -1,5 +1,6 @@
 </br>
-<h3> Overview of registered pets</h2>
+ <div class = "bigBox" >
+<h3 class=header> Overview of registered pets</h2>
 </br>
 <table class="table table-sm table-striped">
   <thead class="thead-dark">
@@ -47,8 +48,10 @@
     <%= link_to 'New Pet', new_pet_path, class:"btn btn-primary btn-sm" %>
   </div>
 <% else %>
+
   <%= form_tag("pets", method: "get") do %>
   <%= number_field_tag(:search, params[:search]) %>
   <%= submit_tag("Check Status", class:"btn btn-sm btn-outline-primary") %>
+    </div>
   <% end %>
 <% end %>

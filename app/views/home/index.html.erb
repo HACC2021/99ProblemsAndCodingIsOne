@@ -1,8 +1,17 @@
+ <div class = "bigBox" >
+</br>
+<h3 class= header>Check Pet Status</h3>
 <br/>
-<h3><u>Check Pet Status</u></h3>
-<br/>
-  
+</br>
+
   <%= form_tag("pets", method: "get") do %>
   <%= number_field_tag(:search, params[:search]) %>
   <%= submit_tag("Check Status", class:"btn btn-sm btn-outline-primary") %>
+  <br/>
+  
+  <link rel="stylesheets" href= "scaffolds.scss">
+  <p class = "infoText">Put in the Chip-Number of your pet to track the status</p>
+  <br/>
+  
+  </div>
   <% end %>
