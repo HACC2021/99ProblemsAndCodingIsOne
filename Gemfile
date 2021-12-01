@@ -11,7 +11,7 @@ gem 'bootsnap',   '1.7.2', require: false
 gem 'devise', '~> 4.2'
 
 group :development, :test do
-  gem 'pg', '1.2.3'
+  gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
 end
 
