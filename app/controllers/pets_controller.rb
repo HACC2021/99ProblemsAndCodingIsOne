@@ -48,10 +48,22 @@ class PetsController < ApplicationController
     respond_to do |format|
       if @pet.update(pet_params)
         #number.has_attribute?('one')
-        if Pet.find_by status: 'Ready for pickup' , email: @pet.email
-          NotiferMailer.pet_ready(@pet).deliver
-        end
         
+        if user_signed_in?
+          if Pet.find_by status: 'Ready for pickup' , email: @pet.email
+            NotiferMailer.pet_ready(@pet).deliver
+          end
+          
+          if Pet.find_by status: 'Documents needed', email: @pet.email
+            NotiferMailer.pet_doc_needed(@pet).deliver
+          end 
+          
+          if Pet.find_by status: 'Animal is sick', email: @pet.email
+            NotiferMailer.pet_ill(@pet).deliver
+          end
+        else
+          NotiferMailer.pet_notifications(@pet).deliver
+        end
         format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
         format.json { render :show, status: :ok, location: @pet }
       else

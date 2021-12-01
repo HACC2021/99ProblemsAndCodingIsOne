@@ -15,8 +15,8 @@ module PetPickupNotification
       :address          => 'smtp.gmail.com' ,
       :domain           => 'mail.google.com' ,
       :port             => 587 ,
-      :user_name        => "calebdp@gmail.com" ,
-      :password         => "zcykdditsepifsvi" ,
+      :user_name        => "petpickuphawaii@gmail.com" ,
+      :password         => "zlpwnhcbgfpcsdpn" ,
       :authentication   => 'login' ,
       :enable_starttls_auto => true
     }
