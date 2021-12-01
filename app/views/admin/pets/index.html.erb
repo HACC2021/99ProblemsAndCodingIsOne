@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+</br>
+<h3> Overview of registered pets</h2>
+</br>
+<table class="table table-sm table-striped ml-4">
+  <thead class="thead-dark">
+    <tr>
+      <th>Chip number</th>
+      <th>Status</th>
+      <th>Owner name</th>
+      <th>Owner adress</th>
+      <th>Payment</th>
+      <th>Date of arrival</th>
+      <th>Email</th>
+      <th>Pet name</th>
+      <th colspan="20"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pets.each do |pet| %>
+      <tr>
+        <td><%= pet.chipNumber %></td>
+        <td><%= pet.status %></td>
+        <td><%= pet.ownerName %></td>
+        <td><%= pet.ownerAdress %></td>
+        <td><%= pet.payment %></td>
+        <td><%= pet.dateOfArrival %></td>
+        <td><%= pet.email %></td>
+        <td><%= pet.petName %></td>
+        <td><%= link_to 'Show', admin_pets_path,class:"btn btn-secondary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_admin_pet_path(pet), class:"btn btn-secondary btn-sm"%></td>
+        <td><%= link_to 'Destroy', admin_pet_path(pet), class:"btn btn-secondary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div>
+  <%= link_to 'New Pet', new_admin_pet_path, class:"btn btn-secondary btn-sm" %>
+</div>

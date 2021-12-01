@@ -10,6 +10,16 @@ module PetPickupNotification
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    
+    ActionMailer::Base.smtp_settings = {
+      :address          => 'smtp.gmail.com' ,
+      :domain           => 'mail.google.com' ,
+      :port             => 587 ,
+      :user_name        => "petpickuphawaii@gmail.com" ,
+      :password         => "zlpwnhcbgfpcsdpn" ,
+      :authentication   => 'login' ,
+      :enable_starttls_auto => true
+    }
 
     # Configuration for the application, engines, and railties goes here.
     #
